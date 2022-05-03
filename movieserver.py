@@ -19,8 +19,6 @@ def check_token(key):
             f.close()
             return 0
 
-
-
 @app.route('/movie/<variable>/<key>', methods=['GET']) 
 def movie(variable, key):
     moviedirlist = []
@@ -33,5 +31,5 @@ def movie(variable, key):
             movielink = '/static/Movies/{0}/{1}'.format(moviedirlist[int(variable)], f)
             return render_template('index.html', param1=movielink)
 
-
-app.run(debug=True, host='192.168.1.10', port='5000', threaded=True)
+        
+app.run(debug=True, host='0.0.0.0', port='5000', threaded=True)
