@@ -27,12 +27,12 @@ def make_token():
 
 def get_movie_list():
 	i = 0
-	for movie in os.listdir('/mnt/4f510889-32ca-4946-8d2c-09e9570d7cff/discordbot/static/Movies'):
+	for movie in os.listdir('./static/Movies'):
 		i+=1
 		movielist.append('\n({0}) '.format(i) + movie)
 
 def get_tv_list():	
-	for tv in os.listdir('/mnt/4f510889-32ca-4946-8d2c-09e9570d7cff/discordbot/static/TV'):
+	for tv in os.listdir('./static/TV'):
 		tvlist.append(tv)
 
 @bot.event
@@ -66,7 +66,7 @@ async def on_message(message):
 		res = s.search(message.content)
 		num = res.group(1)
 		print(num)
-		await message.author.send('http://74.88.95.5/movie/{0}/{1}'.format(num, make_token()))
+		await message.author.send('http://0.0.0.0/movie/{0}/{1}'.format(num, make_token()))
 		
 
 
